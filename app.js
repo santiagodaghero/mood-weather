@@ -46,7 +46,7 @@ function cambiarEstado(condicion) {
   const container = document.querySelector('.container');
   const clima = condicion.toLowerCase();
   const hora = new Date().getHours();
-  const esNoche = hora >= 20 || hora < 7;
+  const esNoche = hora >= 19 || hora < 7;
 
   if (esNoche) {
     container.className = 'container night';

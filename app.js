@@ -32,6 +32,9 @@ function obtenerClima(position) {
       document.querySelector('.temp').textContent = temp + '°';
       document.querySelector('.cond').textContent = condicion;
 
+      const icono = data.weather[0].icon;
+      document.querySelector('.icon').src = `https://openweathermap.org/img/wn/${icono}@2x.png`;
+
       const sensacion = Math.round(data.main.feels_like);
 
       const cardNums = document.querySelectorAll('.card-num');

@@ -49,7 +49,9 @@ function cambiarEstado(condicion) {
   const esNoche = hora >= 19 || hora < 7;
 
   if (esNoche) {
-    container.className = 'container night';
+  container.className = 'container night';
+  document.querySelector('.icon').textContent = '🌙';
+  document.querySelector('.cond').textContent = idioma === 'es' ? 'Noche despejada' : 'Clear night';
   } else if (clima.includes('lluvia') || clima.includes('llovizna')) {
     container.className = 'container rainy';
   } else if (clima.includes('nube') || clima.includes('nublado')) {

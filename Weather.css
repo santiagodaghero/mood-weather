@@ -66,12 +66,7 @@ body {
 }
 
 /* ── ICONO ── */
-.icon {
-  width: 72px;
-  height: 72px;
-  object-fit: contain;
-  margin: 4px 0;
-}
+.icon { font-size: 64px; }
 
 /* ── TEMPERATURA ── */
 .temp {
@@ -101,7 +96,7 @@ body {
 .cards {
   display: flex;
   justify-content: space-between;
-  gap: 4px;
+  gap: 3px;
   width: 100%;
   padding-top: 30px;
 }

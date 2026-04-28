@@ -107,7 +107,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px 6px;
+  padding: 10px 5px;
   border-radius: 14px;
   gap: 4px;
 }

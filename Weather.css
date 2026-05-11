@@ -208,3 +208,134 @@ body {
 .container.rainy .card-num  { color: #93c5fd; }
 .container.rainy .card-text { color: rgba(147, 197, 253, 0.5); }
 .container.rainy .lang-btn  { background: rgba(255,255,255,0.08); color: #93c5fd; border: 1px solid rgba(147,197,253,0.2); }
+
+/* ════════════════════════════════
+   LOADER SCREEN
+════════════════════════════════ */
+
+.loader-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 270px;
+  height: 500px;
+  border-radius: 36px;
+  background: linear-gradient(170deg, #1a1a2e, #16213e 50%, #0f3460);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.25);
+}
+
+.loader-icon {
+  font-size: 52px;
+  animation: floatIcon 2s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+.loader-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(199, 210, 254, 0.15);
+  border-top-color: rgba(199, 210, 254, 0.7);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loader-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(199, 210, 254, 0.5);
+  letter-spacing: 0.05em;
+}
+
+/* ════════════════════════════════
+   SKELETON SHIMMER
+════════════════════════════════ */
+
+.skeleton-block {
+  display: inline-block;
+  border-radius: 8px;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.08) 25%,
+    rgba(255,255,255,0.18) 50%,
+    rgba(255,255,255,0.08) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton-circle {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.08) 25%,
+    rgba(255,255,255,0.18) 50%,
+    rgba(255,255,255,0.08) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.temp-skeleton {
+  width: 90px;
+  height: 76px;
+  border-radius: 14px;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Loading state: fondo neutro oscuro para los skeletons */
+.container.loading {
+  background: linear-gradient(170deg, #1a1a2e, #16213e 50%, #0f3460) !important;
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* ════════════════════════════════
+   REVEAL ANIMATION
+════════════════════════════════ */
+
+.container.revealed {
+  animation: revealCard 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.container.revealed .top-bar,
+.container.revealed .city,
+.container.revealed .icon,
+.container.revealed .temp,
+.container.revealed .cond,
+.container.revealed .cards,
+.container.revealed .lang-btn {
+  animation: fadeSlideUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+.container.revealed .top-bar  { animation-delay: 0.05s; }
+.container.revealed .city      { animation-delay: 0.10s; }
+.container.revealed .icon      { animation-delay: 0.15s; }
+.container.revealed .temp      { animation-delay: 0.20s; }
+.container.revealed .cond      { animation-delay: 0.25s; }
+.container.revealed .cards     { animation-delay: 0.30s; }
+.container.revealed .lang-btn  { animation-delay: 0.35s; }
+
+@keyframes revealCard {
+  from { transform: scale(0.96); opacity: 0.6; }
+  to   { transform: scale(1);    opacity: 1;   }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}

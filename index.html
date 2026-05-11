@@ -5,55 +5,62 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Mood Weather</title>
     <link rel='stylesheet' href='Weather.css'>
-    
 </head>
 <body>
   <main>
   <div class="wrapper">
     <h1 class="title">☁️ MOOD WEATHER</h1>
 
-    <div class="container">
- 
+    <!-- LOADER (aparece primero) -->
+    <div class="loader-screen" id="loaderScreen">
+      <div class="loader-icon">☁️</div>
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Buscando tu ubicación…</p>
+    </div>
+
+    <div class="container loading" id="mainContainer" style="display:none;">
+
       <!-- Barra superior -->
       <div class="top-bar">
-        <span class="time">9:41</span>
-        <span class="location">📍 Buenos Aires</span>
+        <span class="time">·</span>
+        <span class="location">📍 ···</span>
       </div>
- 
+
       <!-- Ciudad -->
-      <h2 class="city">Buenos Aires</h2>
- 
+      <h2 class="city"><span class="skeleton-block" style="width:120px;height:20px;"></span></h2>
+
       <!-- Icono del clima -->
-      <span class="icon"></span>
- 
+      <span class="icon skeleton-circle"></span>
+
       <!-- Temperatura -->
-      <span class="temp">28°</span>
- 
+      <span class="temp"><span class="skeleton-block temp-skeleton"></span></span>
+
       <!-- Condición -->
-      <h2 class="cond">Soleado</h2>
- 
+      <h2 class="cond"><span class="skeleton-block" style="width:80px;height:12px;border-radius:6px;display:inline-block;"></span></h2>
+
       <!-- Cards de datos -->
       <div class="cards">
         <div class="card">
-          <span class="card-num">68%</span>
-          <span class="card-text">Humedad</span>
+          <span class="card-num"><span class="skeleton-block" style="width:36px;height:14px;border-radius:6px;display:inline-block;"></span></span>
+          <span class="card-text"><span class="skeleton-block" style="width:50px;height:10px;border-radius:4px;display:inline-block;"></span></span>
         </div>
         <div class="card">
-          <span class="card-num">21 km/h</span>
-          <span class="card-text">Viento</span>
+          <span class="card-num"><span class="skeleton-block" style="width:52px;height:14px;border-radius:6px;display:inline-block;"></span></span>
+          <span class="card-text"><span class="skeleton-block" style="width:36px;height:10px;border-radius:4px;display:inline-block;"></span></span>
         </div>
         <div class="card">
-          <span class="card-num">UV 8</span>
-          <span class="card-text">Sencación</span>
+          <span class="card-num"><span class="skeleton-block" style="width:36px;height:14px;border-radius:6px;display:inline-block;"></span></span>
+          <span class="card-text"><span class="skeleton-block" style="width:56px;height:10px;border-radius:4px;display:inline-block;"></span></span>
         </div>
       </div>
- 
+
       <!-- Botón de idioma -->
-      <button class="lang-btn">ES → EN</button>
- 
+      <button class="lang-btn" style="visibility:hidden;">ES → EN</button>
+
     </div>
+  </div>
   </main>
- 
+
   <script src="app.js"></script>
 </body>
 </html>
